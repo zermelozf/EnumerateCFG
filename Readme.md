@@ -1,7 +1,7 @@
 #Enumerate productions given a Context Free Grammar
 
 ##enumerate.py 
-Enumerate finite CFG
+Enumerate finite CFG.
 Corrects some problems with the nltk.parse.generate example.
 
 ##enumerate_small_sentences.py

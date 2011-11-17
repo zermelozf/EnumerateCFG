@@ -15,13 +15,12 @@ def _enumerate(grammar, symbols, max_len):
         else:
             for prod in grammar.productions(lhs=symbols[0]):
                 n_max_len = max_len - len(prod.rhs()) + 1
-                if max_len >= 0:
+                if n_max_len >= 0:
                     enum.extend(_enumerate(grammar, prod.rhs(), n_max_len))                    
     else:
         for first_symbol in _enumerate(grammar, [symbols[0]], max_len):
             for other_symbols in _enumerate(grammar, symbols[1:], max_len-1):
-                    enum.append(first_symbol + ' ' + other_symbols)
-    
+                enum.append(first_symbol + ' ' + other_symbols)
     return enum
 
 if __name__ == "__main__":
@@ -29,10 +28,11 @@ if __name__ == "__main__":
     
     grammar = nltk.parse.load_parser('file:../grammars/tong.cfg').grammar()
     
-    f = open('../enum/tong11words.enum','w')
+    sentences = enumerate(grammar, 7) 
     
-    sentences = enumerate(grammar, 11)
     for sent in sentences:
-        f.write(sent)    
-    
+        print sent
+        
     print len(sentences)
+
+            

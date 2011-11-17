@@ -18,8 +18,7 @@ def _enumerate(grammar, symbols):
     else:
         for first_symbol in _enumerate(grammar, [symbols[0]]):
             for other_symbols in _enumerate(grammar, symbols[1:]):
-                    enum.append(first_symbol + ' ' + other_symbols)
-    
+                enum.append(first_symbol + ' ' + other_symbols)
     return enum
 
 if __name__ == "__main__":
