@@ -9,7 +9,7 @@ from enumerate_small_sentences import enumerate
     
 grammar = nltk.parse.load_parser('file:../grammars/tong.cfg').grammar()
 
-max_len = 3
+max_len = 6
 f = open('../enum/tong'+str(max_len)+'words.enum','w')
 
 sentences = enumerate(grammar, max_len)

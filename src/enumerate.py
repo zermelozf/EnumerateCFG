@@ -26,7 +26,8 @@ if __name__ == "__main__":
     
     grammar = nltk.parse.load_parser('file:../grammars/simple.cfg').grammar()
     
-    for sent in enumerate(grammar):
+    sentences = enumerate(grammar)
+    for sent in sentences:
         print sent
     
-    
+    print len(sentences)
